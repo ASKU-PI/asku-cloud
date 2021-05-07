@@ -6,9 +6,8 @@ spring:
       server:
         git:
           uri: https://github.com/ASKU-PI/asku-config
+          defaultLabel: main
           skipSslValidation: true
-  profiles:
-    active: native
   security:
     user:
       password: ${CONFIG_SERVICE_PASSWORD}

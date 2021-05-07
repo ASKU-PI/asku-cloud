@@ -12,7 +12,7 @@
 
     <parent>
         <groupId>pl.asku</groupId>
-        <artifactId>asku-main</artifactId>
+        <artifactId>asku-cloud</artifactId>
         <version>0.1-SNAPSHOT</version>
     </parent>
 
@@ -20,10 +20,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
         </dependency>
     </dependencies>
 
