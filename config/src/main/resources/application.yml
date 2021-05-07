@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ASKU-PI/asku-config
+          skipSslValidation: true
+  profiles:
+    active: native
+  security:
+    user:
+      password: ${CONFIG_SERVICE_PASSWORD}
+
+server:
+  port: 8888
