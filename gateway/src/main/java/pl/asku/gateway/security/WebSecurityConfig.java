@@ -22,6 +22,9 @@ public class WebSecurityConfig {
             HttpMethod.POST, new String[]{
                     "/auth/login",
                     "/auth/register"
+            },
+            HttpMethod.GET, new String[]{
+                    "/api/account/hello"
             }
     );
 
@@ -61,6 +64,9 @@ public class WebSecurityConfig {
                 .and()
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.POST, OPEN_ENDPOINTS.get(HttpMethod.POST)).permitAll()
+                .pathMatchers(HttpMethod.GET, OPEN_ENDPOINTS.get(HttpMethod.GET)).permitAll()
+                .and()
+                .authorizeExchange()
                 .pathMatchers(HttpMethod.GET, USER_ENDPOINTS.get(HttpMethod.GET)).hasRole("USER")
                 .and()
                 .authorizeExchange()
