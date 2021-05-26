@@ -18,25 +18,37 @@ import java.util.Map;
 @EnableReactiveMethodSecurity
 public class WebSecurityConfig {
 
+    private final Map<HttpMethod, String[]> ANONYMOUS_ENDPOINTS = Map.of(
+            HttpMethod.GET, new String[]{
+                    "/auth/v2/api-docs",
+                    "/account/v2/api-docs",
+                    "/swagger-ui/**",
+                    "/v2/api-docs",
+                    "/swagger-resources/**",
+                    "/swagger-ui.html",
+                    "/webjars/**"
+            }
+    );
+
     private final Map<HttpMethod, String[]> OPEN_ENDPOINTS = Map.of(
             HttpMethod.POST, new String[]{
-                    "/auth/login",
-                    "/auth/register"
+                    "/auth/api/login",
+                    "/auth/api/register"
             },
             HttpMethod.GET, new String[]{
-                    "/api/account/hello"
+                    "/account/api/hello"
             }
     );
 
     private final Map<HttpMethod, String[]> USER_ENDPOINTS = Map.of(
             HttpMethod.GET, new String[]{
-                    "/auth/user"
+                    "/auth/api/user"
             }
     );
 
     private final Map<HttpMethod, String[]> MODERATOR_ENDPOINTS = Map.of(
             HttpMethod.GET, new String[]{
-                    "/auth/user/**"
+                    "/auth/api/user/**"
             }
     );
 
@@ -61,6 +73,7 @@ public class WebSecurityConfig {
                 .authenticationManager(authenticationManager)
                 .securityContextRepository(securityContextRepository)
                 .authorizeExchange()
+                .pathMatchers(HttpMethod.GET, ANONYMOUS_ENDPOINTS.get(HttpMethod.GET)).permitAll()
                 .and()
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.POST, OPEN_ENDPOINTS.get(HttpMethod.POST)).permitAll()
