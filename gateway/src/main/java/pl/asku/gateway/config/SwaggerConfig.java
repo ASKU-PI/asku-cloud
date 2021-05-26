@@ -19,6 +19,7 @@ public class SwaggerConfig implements SwaggerResourcesProvider {
         List<SwaggerResource> resources = new ArrayList<>();
         resources.add(swaggerResource("asku-auth-service", "/auth/v2/api-docs", "2.0"));
         resources.add(swaggerResource("asku-account-service", "/account/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("asku-magazine-service", "/magazine/v2/api-docs", "2.0"));
         return resources;
     }
 

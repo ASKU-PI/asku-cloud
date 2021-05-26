@@ -22,6 +22,7 @@ public class WebSecurityConfig {
             HttpMethod.GET, new String[]{
                     "/auth/v2/api-docs",
                     "/account/v2/api-docs",
+                    "/magazine/v2/api-docs",
                     "/swagger-ui/**",
                     "/v2/api-docs",
                     "/swagger-resources/**",
@@ -36,7 +37,9 @@ public class WebSecurityConfig {
                     "/auth/api/register"
             },
             HttpMethod.GET, new String[]{
-                    "/account/api/hello"
+                    "/account/api/hello",
+
+                    "/magazine/api/hello"
             }
     );
 
