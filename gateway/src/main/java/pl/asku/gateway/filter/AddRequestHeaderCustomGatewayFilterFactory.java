@@ -29,7 +29,7 @@ public class AddRequestHeaderCustomGatewayFilterFactory extends AddRequestHeader
     public GatewayFilter apply(NameValueConfig config) {
         return new GatewayFilter() {
             public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-                String value = "";
+                String value = null;
                 if(config.getName().equals("Username") && config.getValue().equals("username")
                     && exchange.getRequest().getHeaders().containsKey("Authorization")){
                     String authToken = Objects.requireNonNull(exchange.getRequest().getHeaders().get("Authorization")).get(0).substring(7);
