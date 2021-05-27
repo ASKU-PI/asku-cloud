@@ -38,6 +38,7 @@ public class WebSecurityConfig {
             },
             HttpMethod.GET, new String[]{
                     "/account/api/hello",
+                    "/account/api/user",
 
                     "/magazine/api/hello"
             }
