@@ -40,13 +40,18 @@ public class WebSecurityConfig {
                     "/account/api/hello",
                     "/account/api/user",
 
-                    "/magazine/api/hello"
+                    "/magazine/api/hello",
+                    "/magazine/api/search",
+                    "/magazine/api/details/**"
             }
     );
 
     private final Map<HttpMethod, String[]> USER_ENDPOINTS = Map.of(
             HttpMethod.GET, new String[]{
                     "/auth/api/user"
+            },
+            HttpMethod.POST, new String[]{
+                    "/magazine/api/add"
             }
     );
 
@@ -85,6 +90,7 @@ public class WebSecurityConfig {
                 .and()
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.GET, USER_ENDPOINTS.get(HttpMethod.GET)).hasRole("USER")
+                .pathMatchers(HttpMethod.POST, USER_ENDPOINTS.get(HttpMethod.POST)).hasRole("USER")
                 .and()
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.GET, MODERATOR_ENDPOINTS.get(HttpMethod.GET)).hasRole("MODERATOR")
