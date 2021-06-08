@@ -40,7 +40,6 @@ public class WebSecurityConfig {
                     "/account/api/hello",
                     "/account/api/user",
 
-                    "/magazine/api/hello",
                     "/magazine/api/search",
                     "/magazine/api/details/**"
             }
