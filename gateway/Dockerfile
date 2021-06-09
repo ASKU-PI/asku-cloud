@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:16
 
 ADD ./target/gateway.jar /app/
 CMD ["java", "-Xmx200m", "-jar", "/app/gateway.jar"]

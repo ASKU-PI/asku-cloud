@@ -41,7 +41,8 @@ public class WebSecurityConfig {
                     "/account/api/user",
 
                     "/magazine/api/search",
-                    "/magazine/api/details/**"
+                    "/magazine/api/details/**",
+                    "/magazine/api/image/get/**"
             }
     );
 
@@ -51,7 +52,8 @@ public class WebSecurityConfig {
             },
             HttpMethod.POST, new String[]{
                     "/magazine/api/add",
-                    "/magazine/api/reservation/add"
+                    "/magazine/api/reservation/add",
+                    "/magazine/api/image/upload"
             }
     );
 
