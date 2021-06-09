@@ -50,7 +50,8 @@ public class WebSecurityConfig {
                     "/auth/api/user"
             },
             HttpMethod.POST, new String[]{
-                    "/magazine/api/add"
+                    "/magazine/api/add",
+                    "/magazine/api/reservation/add"
             }
     );
 
