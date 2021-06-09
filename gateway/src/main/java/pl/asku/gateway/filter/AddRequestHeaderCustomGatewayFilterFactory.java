@@ -6,8 +6,6 @@ import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.factory.AddRequestHeaderGatewayFilterFactory;
 import org.springframework.cloud.gateway.support.GatewayToStringStyler;
 import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import pl.asku.gateway.utils.JwtUtil;
