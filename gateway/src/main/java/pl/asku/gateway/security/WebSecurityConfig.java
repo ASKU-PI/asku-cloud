@@ -20,6 +20,7 @@ public class WebSecurityConfig {
 
     private final Map<HttpMethod, String[]> ANONYMOUS_ENDPOINTS = Map.of(
             HttpMethod.GET, new String[]{
+                    "/auth/actuator/health",
                     "/auth/v2/api-docs",
                     "/account/v2/api-docs",
                     "/magazine/v2/api-docs",
