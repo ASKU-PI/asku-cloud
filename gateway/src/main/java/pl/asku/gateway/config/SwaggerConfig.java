@@ -17,17 +17,17 @@ public class SwaggerConfig implements SwaggerResourcesProvider {
     @Override
     public List<SwaggerResource> get() {
         List<SwaggerResource> resources = new ArrayList<>();
-        resources.add(swaggerResource("asku-auth-service", "/auth/v2/api-docs"));
-        resources.add(swaggerResource("asku-account-service", "/account/v2/api-docs"));
-        resources.add(swaggerResource("asku-magazine-service", "/magazine/v2/api-docs"));
+        resources.add(swaggerResource("asku-auth-service", "/auth/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("asku-account-service", "/account/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("asku-magazine-service", "/magazine/v2/api-docs", "2.0"));
         return resources;
     }
 
-    private SwaggerResource swaggerResource(String name, String location) {
+    private SwaggerResource swaggerResource(String name, String location, String version) {
         SwaggerResource swaggerResource = new SwaggerResource();
         swaggerResource.setName(name);
         swaggerResource.setLocation(location);
-        swaggerResource.setSwaggerVersion("2.0");
+        swaggerResource.setSwaggerVersion(version);
         return swaggerResource;
     }
 
