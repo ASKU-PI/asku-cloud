@@ -7,8 +7,3 @@ spring:
       fail-fast: true
       password: ${CONFIG_SERVICE_PASSWORD}
       username: user
-  rabbitmq:
-    host: rabbitmq
-    port: 5672
-    username: ${RABBITMQ_DEFAULT_USER}
-    password: ${RABBITMQ_DEFAULT_PASS}
