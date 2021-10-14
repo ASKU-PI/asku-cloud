@@ -1,4 +1,4 @@
-FROM openjdk:16
+FROM openjdk:17
 
 ADD ./target/discovery.jar /app/
 CMD ["java", "-Xmx200m", "-jar", "/app/discovery.jar"]
