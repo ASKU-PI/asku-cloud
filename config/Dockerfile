@@ -7,3 +7,5 @@ FROM openjdk:17
 COPY --from=build /usr/src/app/target/config.jar /usr/app/config.jar
 EXPOSE 8888
 ENTRYPOINT ["java","-jar","/usr/app/config.jar"]
+
+HEALTHCHECK --interval=30s --timeout=30s CMD curl -f http://localhost:8888/actuator/health || exit 1

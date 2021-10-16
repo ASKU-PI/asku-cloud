@@ -7,3 +7,5 @@ FROM openjdk:17
 COPY --from=build /usr/src/app/target/discovery.jar /usr/app/discovery.jar
 EXPOSE 8761
 ENTRYPOINT ["java","-jar","/usr/app/discovery.jar"]
+
+HEALTHCHECK --interval=30s --timeout=30s CMD curl -f http://localhost:8761/actuator/health || exit 1
